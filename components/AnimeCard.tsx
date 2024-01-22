@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { MotionDiv } from "./MotionDiv";
+import Link from "next/link";
 
 export interface AnimeProp {
   id: string;
@@ -37,6 +38,7 @@ function AnimeCard({ anime, index }: Prop) {
     }}
     viewport={{ amount: 0 }}
     >
+      <Link href={`/anime/${anime.name}`}>
       <div className="relative w-full h-[37vh]">
         <Image
           src={`https://shikimori.one${anime.image.original}`}
@@ -81,6 +83,7 @@ function AnimeCard({ anime, index }: Prop) {
           </div>
         </div>
       </div>
+      </Link>
     </MotionDiv>
   );
 }
